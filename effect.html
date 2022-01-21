@@ -1,0 +1,59 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+	 
+<meta name="Viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body  ontouchstart="showCoordinates(event)" ontouchmove="showCoordinates(event)" ontouchend="myFunction()">
+  
+
+
+  <div id="canvas"></div>
+  
+ 
+
+</body>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	#canvas{
+		background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+		width: 100%;
+		height: 100%;
+		position:fixed;
+	
+	}
+	#canvas:after{
+		content:"";
+		z-index: 1;
+			position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		transform: translate(-50%,-50%);
+		transition: all  2s ease;
+		background: radial-gradient(ellipse at bottom, #145A32   0%, #0B5345   100%)
+	}
+	#canvas:hover:after{
+width: 100%;
+	height: 100%;
+	background-size: cover
+	}
+</style>
+<script type="text/javascript">
+	var background= new Howl({
+    src:['bacground.mp3'],
+    loop:true
+  
+    });
+
+  background.play()
+</script>
+</html>

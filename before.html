@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game</title>
+        <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1,maximum-scale=1" />
+   <link href="https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel="stylesheet">
+       
+    </head>
+   <body>
+   	
+
+	<div id="counter">
+		<P id="timecont">3</P>
+	</div>
+
+<style type="text/css">
+	*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+    font-weight: bold;
+    
+}
+
+
+
+#counter{
+  border: 1px solid #191919;
+  width: 100px;
+  height:100px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+transform: translate(-50%,-50%);
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  border-radius: 50%;
+  border-width: 10px;
+  color: #F00F0F ;
+
+}
+</style>
+<script type="text/javascript">
+  let decont=document.getElementById("timecont")
+
+  let time=3
+
+let countDown=setInterval(function(){
+  time=time-1
+  decont.textContent=time
+  if (time==-1) {
+document.getElementById("counter").style.display="none"
+    clearInterval(countDown)
+
+  }
+},1000)
+</script>
+   </body>
+   </html>
+  

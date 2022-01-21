@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game</title>
+        <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1,maximum-scale=1" />
+   <link href="https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel="stylesheet">
+       
+    </head>
+
+<body>
+
+<div id="animation">
+	<canvas id="canvas"></canvas>
+</div>
+</body>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background:  #1B2735;
+
+}
+#animation{
+	position: relative;
+
+	background-color: red
+}
+#canvas{
+	z-index: -1;
+	 background-position: 50% 50%;
+   background-size: cover;
+   -webkit-background-size:cover;
+    position:fixed;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    transition: all 2s ease-in-out;
+
+ 
+}
+
+</style>
+<script type="text/javascript">
+	let canvas= document.querySelector("#canvas")
+	
+	canvas.width=window.innerWidth
+	canvas.height=window.innerHeight
+	let c= canvas.getContext("2d")
+
+
+function Circle(x ,y,dx,dy,radius,rx,ry,rdx,rdy,rw,rh){
+ this.x=x
+  this.y=y
+   this.dx=dx
+    this.dy=dy
+     this.radius=radius
+this.rx=rx
+this.ry=ry
+this.rdx=rdx
+this.rdy=rdy
+this.rw=rw
+this.rh=rh
+     this.draw=function(){
+     	c.beginPath()
+     	 c.globalAlpha=0.8
+     c.arc(this.x,this.y,this.radius,0,Math.PI*2,false)
+      c.fillStyle="white"
+        c.fill()
+         c.globalAlpha=1
+        c.fillRect(this.rx,this.ry,this.rw,this.rh)
+
+     }
+     this.update=function(){
+    this.y-=this.dy
+    this.ry-=this.rdy
+    if (this.y+this.radius<0) {
+    	this.y=innerHeight
+
+ 
+    }
+
+    if (this.ry+this.rh-5<0) {
+    	this.xr=Math.random()*(window.innerWidth- rw *2 ) +rw;
+    	this.ry=innerHeight
+  
+    }
+
+this.draw()
+     }
+
+}
+
+
+
+let circleStore=[]
+
+
+for(let i=0; i<25;i++){
+let radius=1
+let x=Math.random()*(window.innerWidth- radius *2 ) +radius;
+let y=Math.random()*(window.innerHeight- radius *2 ) +radius;
+let dx=1
+let dy=1
+let rw=5
+let rh=5
+let rx=Math.random()*(window.innerWidth- rw *2 ) +rw;
+let ry=Math.random()*(window.innerHeight- rw *2 ) +rw;
+let rdx=0.7
+let rdy=0.7
+
+
+	circleStore.push(new Circle(x ,y,dx,dy,radius,rx,ry,rdx,rdy,rw,rh))
+}
+
+function animate(){
+	requestAnimationFrame(animate)
+
+  
+   c.clearRect(0, 0, canvas.width, canvas.height);
+
+for(var i = 0; i<circleStore.length; i++){
+ 	circleStore[i].update();
+ }
+
+
+
+
+}
+animate()
+
+let changeDimension
+changeDimension="radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%"
+ let change=setInterval(function(){
+  let dimenion= ["radial-gradient(ellipse at bottom, #145A32   0%, #0B5345   100%)",
+  "radial-gradient(ellipse at bottom, #191919  0%,#641E16  100%)",
+  "radial-gradient(ellipse at bottom, #2980B9 0%, #282741 100%)",
+  "radial-gradient(ellipse at bottom, #FF6138 0%, #FFBE53 100%",
+  "radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)" ]
+ 
+let randomDmenion =Math.floor(Math.random()*dimenion.length)
+
+ let givedimenion=dimenion[randomDmenion]
+
+ canvas.style.backgroundImage=givedimenion
+
+},15000)
+    
+  
+
+
+
+</script>
+</html>

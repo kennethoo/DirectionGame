@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game</title>
+        <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1,maximum-scale=1" />
+        <script src="swiped-events.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+   
+   <link href="https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel="stylesheet">
+       
+    </head>
+    <body>
+    	<div id="content">
+<canvas id="canvas"></canvas>
+
+<div id="info">
+    <div id="bestscore">
+   <span id="bscor">0</span>
+    </div>
+    
+  </div>
+
+
+    <div id="lose-element">
+   <section id="groupdate">
+     <div class="element" id="sccore">
+       <p class="data-result">S</p>
+       <p  class="currentdata"  id="cuurentScore">0</p>
+     </div>
+       <div  class="element" id="bevstScore">
+         <p class="data-result">BS</p>
+         <p class="currentdata" id="cuurentBestScore">0</p>
+       </div>
+   </section> 
+  <div id="again"> <button id="play" onclick="replay()">Play Again</button></div>
+  </div>
+
+<center><div id="score">
+    <span id="scor">0</span></center>
+
+        <div  id="area1">
+    <div id="counter">
+        <p id="timecont">3</p>
+    </div>
+
+<div id="result"><p id="result2">result</p></div>
+        	 <div id="message">
+        	 	<div id="ai"></div>
+        	 </div>
+        </div>
+   
+        <div id="area2"data-swipe-threshold="100" >
+        	  <div id="top"></div>
+        	   <div id="bottom"></div>
+        	   <div id="right"></div>
+        	   <div id="left"></div>
+        </div>
+     
+       
+         
+        </div>
+   
+    </body>
+    <script type="text/javascript" src="howler.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</html>

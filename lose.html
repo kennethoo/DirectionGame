@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game</title>
+        <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1,maximum-scale=1" />
+   <link href="https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel="stylesheet">
+       
+    </head>
+   <body>
+   	
+
+	<div id="lose-element">
+   <section id="groupdate">
+     <div class="element" id="score">
+       <p class="data-result">S</p>
+       <p  class="currentdata"  id="cuurentScore">0</p>
+     </div>
+       <div  class="element" id="bestScore">
+         <p class="data-result">BS</p>
+         <p class="currentdata" id="cuurentBestScore">0</p>
+       </div>
+   </section> 
+  <div id="again"> <button id="play">Play Again</button></div>
+  </div>
+
+<style type="text/css">
+	*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+    font-weight:bold;
+
+}
+
+#lose-element{
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 80%;
+height:80%;
+
+
+}
+
+#groupdate{
+  
+   width: 100%;
+   height: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+justify-content: space-between;
+}
+.element{
+letter-spacing: 2px;
+display:flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+position: relative;
+justify-content: space-around;
+height:120px;
+width: 120px;
+padding: 20px;
+border-radius: 50%;
+font-size: 30px;
+color: white;
+background-color:#191919;
+animation: 1s up  ease-in-out
+}
+.currentdata{
+  font-size: 40px;
+ text-shadow: 0 0 3px #FF0000
+
+}
+#again{
+
+  
+  width: 100%;
+position: relative;
+top: 20%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#play{
+
+  outline: none;
+  border: 0;
+  color:#333 ;
+  position: relative;
+  width: 180px;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 24px;
+  background-color:#C0392B  ;
+animation: 1s down  ease-in-out;
+box-shadow:1px 10px 20px  #C0392B;
+}
+@keyframes down{
+  from{
+right: 300px;
+opacity: 0
+
+  }
+  to{
+right: 0px;
+opacity: 1
+
+  }
+}
+@keyframes up{
+  from{
+    left:300px; 
+    opacity: 0
+  }
+
+ to {
+ left:0Px; 
+  opacity: 1
+  }
+  
+  
+}
+</style>
+<script type="text/javascript">
+  
+</script>
+   </body>
+   </html>
+  
